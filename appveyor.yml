@@ -1,0 +1,13 @@
+version: 1.0.{build}
+build_cloud: Process
+max_jobs: 1
+image: Visual Studio 2017
+clone_depth: 1
+build_script:
+- ps: >-
+    dotnet build TestConsoleApp
+
+    dotnet publish TestConsoleApp -c Release
+test: off
+artifacts:
+- path: TestConsoleApp\bin\release\netcoreapp2.2\publish\
