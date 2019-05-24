@@ -14,3 +14,5 @@ test: off
 
 artifacts:
 - path: TestConsoleApp\bin\release\netcoreapp2.2\publish\
+- path: TestConsoleApp\bin\Release\TestConsoleApp.1.0.0.nupkg
+  name: nuget-pack
