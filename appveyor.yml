@@ -8,7 +8,7 @@ build_script:
     dotnet build TestConsoleApp
 
     dotnet publish TestConsoleApp -c Release
-- appveyor PushArtifact TestConsoleApp.sln
+- ps: Push-AppveyorArtifact TestConsoleApp.sln
 test: off
 
 artifacts:
