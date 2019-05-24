@@ -8,6 +8,8 @@ build_script:
     dotnet build TestConsoleApp
 
     dotnet publish TestConsoleApp -c Release
+- appveyor PushArtifact TestConsoleApp.sln
 test: off
+
 artifacts:
 - path: TestConsoleApp\bin\release\netcoreapp2.2\publish\
