@@ -4,11 +4,12 @@ max_jobs: 1
 image: Visual Studio 2017
 clone_depth: 1
 build_script:
-- ps: >-
+- ps: |
     dotnet build TestConsoleApp
-
     dotnet publish TestConsoleApp -c Release
+    dotnet pack TestConsoleApp -c Release
 - ps: Push-AppveyorArtifact TestConsoleApp.sln
+
 test: off
 
 artifacts:
