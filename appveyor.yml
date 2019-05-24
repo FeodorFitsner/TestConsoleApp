@@ -16,3 +16,10 @@ artifacts:
 - path: TestConsoleApp\bin\release\netcoreapp2.2\publish\
 - path: TestConsoleApp\bin\Release\TestConsoleApp.1.0.0.nupkg
   name: nuget-pack
+
+deploy:
+- provider: NuGet
+  server: http://localhost:5000/nuget/appveyor-ocxxelj1qm4c
+  api_key:
+    secure: 0t8Gd2o5oQcXgbSFrqoP2f4uSrsxS68ZjGfrJMCRWQA=
+  skip_symbols: true
