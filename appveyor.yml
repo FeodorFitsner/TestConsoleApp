@@ -4,10 +4,22 @@ max_jobs: 1
 image: Visual Studio 2017
 clone_depth: 1
 build_script:
-- ps: >-
+- ps: |
     dotnet build TestConsoleApp
-
     dotnet publish TestConsoleApp -c Release
+    dotnet pack TestConsoleApp -c Release
+- ps: Push-AppveyorArtifact TestConsoleApp.sln
+
 test: off
+
 artifacts:
 - path: TestConsoleApp\bin\release\netcoreapp2.2\publish\
+- path: TestConsoleApp\bin\Release\TestConsoleApp.1.0.0.nupkg
+  name: nuget-pack
+
+#deploy:
+#- provider: NuGet
+#  server: http://localhost:5000/nuget/appveyor-ocxxelj1qm4c
+#  api_key:
+#    secure: 0t8Gd2o5oQcXgbSFrqoP2f4uSrsxS68ZjGfrJMCRWQA=
+#  skip_symbols: true
