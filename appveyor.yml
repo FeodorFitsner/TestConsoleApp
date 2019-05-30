@@ -4,14 +4,14 @@ max_jobs: 1
 image: Visual Studio 2017
 clone_depth: 1
 
-dotnet_csproj:
-  patch: true
-  file: '**\*.csproj'
-  version: '{version}'
-  package_version: '{version}'
-  assembly_version: '{version}'
-  file_version: '{version}'
-  informational_version: '{version}'
+#dotnet_csproj:
+#  patch: true
+#  file: '**\*.csproj'
+#  version: '{version}'
+#  package_version: '{version}'
+#  assembly_version: '{version}'
+#  file_version: '{version}'
+#  informational_version: '{version}'
 
 build_script:
 - ps: |
